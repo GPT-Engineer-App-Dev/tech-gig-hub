@@ -22,7 +22,10 @@ const Navbar = () => {
         <Link as={RouterLink} to="/messages" mr={6}>
           Messages
         </Link>
-        <Button colorScheme="teal" variant="outline">
+        <Link as={RouterLink} to="/jobs" mr={6}>
+          Jobs
+        </Link>
+        <Button as={RouterLink} to="/post-job" colorScheme="teal" variant="outline">
           Post a Job
         </Button>
       </Box>
