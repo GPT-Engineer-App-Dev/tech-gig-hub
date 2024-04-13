@@ -2,7 +2,10 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
 import Developers from "./pages/Developers.jsx";
 
-function App() {
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+export function App() {
   return (
     <Router>
       <Routes>
@@ -12,5 +15,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
