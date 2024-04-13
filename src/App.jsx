@@ -6,6 +6,8 @@ import Messages from "./pages/Messages";
 import Conversation from "./pages/Conversation";
 import Jobs from "./pages/Jobs";
 import JobForm from "./components/JobForm";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -27,6 +29,8 @@ export function App() {
         <Route path="/conversation/:developerId" element={<Conversation />} />
         <Route path="/jobs" element={<Jobs jobs={jobs} />} />
         <Route path="/post-job" element={<JobForm onSubmit={handleJobSubmit} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </Router>
