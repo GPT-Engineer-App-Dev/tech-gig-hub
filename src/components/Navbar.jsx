@@ -1,8 +1,16 @@
 import React from "react";
-import { Box, Flex, Spacer, Heading, Button, Link } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Box, Flex, Spacer, Heading, Button, Link, Text } from "@chakra-ui/react";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
   return (
     <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg="gray.800" color="white">
       <Flex align="center" mr={5}>
@@ -25,9 +33,26 @@ const Navbar = () => {
         <Link as={RouterLink} to="/jobs" mr={6}>
           Jobs
         </Link>
-        <Button as={RouterLink} to="/post-job" colorScheme="teal" variant="outline">
+        <Button as={RouterLink} to="/post-job" colorScheme="teal" variant="outline" mr={6}>
           Post a Job
         </Button>
+        {token ? (
+          <>
+            <Text mr={6}>Welcome, {localStorage.getItem("username")}</Text>
+            <Button onClick={logout} colorScheme="red" variant="outline">
+              Logout
+            </Button>
+          </>
+        ) : (
+          <>
+            <Button as={RouterLink} to="/login" mr={3}>
+              Login
+            </Button>
+            <Button as={RouterLink} to="/register">
+              Register
+            </Button>
+          </>
+        )}
       </Box>
     </Flex>
   );
