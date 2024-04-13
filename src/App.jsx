@@ -8,10 +8,12 @@ import Footer from "./components/Footer";
 export function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Index />} />
         <Route path="/developers" element={<Developers />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
