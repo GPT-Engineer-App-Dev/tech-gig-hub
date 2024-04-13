@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading, Image, Text, Button } from "@chakra-ui/react";
-import ContactModal from "./ContactModal";
+import { Link as RouterLink } from "react-router-dom";
 
 const DeveloperCard = ({ developer }) => {
   return (
@@ -11,9 +11,9 @@ const DeveloperCard = ({ developer }) => {
       </Heading>
       <Text mb={2}>{developer.location}</Text>
       <Text mb={4}>{developer.specialties.join(", ")}</Text>
-      <ContactModal developer={developer}>
-        <Button colorScheme="teal">Message</Button>
-      </ContactModal>
+      <Button as={RouterLink} to={`/conversation/${developer.id}`} colorScheme="teal">
+        Message
+      </Button>
     </Box>
   );
 };

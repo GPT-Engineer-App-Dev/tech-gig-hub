@@ -19,6 +19,9 @@ const Navbar = () => {
         <Link as={RouterLink} to="/developers" mr={6}>
           Developers
         </Link>
+        <Link as={RouterLink} to="/messages" mr={6}>
+          Messages
+        </Link>
         <Button colorScheme="teal" variant="outline">
           Post a Job
         </Button>
