@@ -1,4 +1,5 @@
-import { Box, Button, Container, Flex, Heading, Image, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Heading, Image, SimpleGrid, Stack, Text, Link } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { FaCode, FaSearch, FaComments } from "react-icons/fa";
 
 const Index = () => {
@@ -17,7 +18,7 @@ const Index = () => {
               </Heading>
               <Text fontSize="xl">Particles connects companies with pre-vetted developers specializing in modern web technologies like React, Node, .NET, Go, JavaScript and more. Easily search, filter and message candidates to find your perfect hire.</Text>
               <Stack direction={{ base: "column", md: "row" }} spacing={4} mt={8}>
-                <Button size="lg" colorScheme="teal">
+                <Button as={RouterLink} to="/developers" size="lg" colorScheme="teal">
                   View Developers
                 </Button>
                 <Button size="lg" variant="outline" colorScheme="white">
@@ -68,7 +69,7 @@ const Index = () => {
           <Heading size="xl" mb={8}>
             Ready to Find Your Next Developer?
           </Heading>
-          <Button size="lg" colorScheme="white" variant="outline">
+          <Button as={RouterLink} to="/developers" size="lg" colorScheme="white" variant="outline">
             View Developers
           </Button>
         </Container>
